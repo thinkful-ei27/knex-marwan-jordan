@@ -1,5 +1,7 @@
 'use strict';
 
+exports.PORT = process.env.PORT || 8080; 
+
 const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://localhost/dev-restaurants-app';
 
 exports.DATABASE = {
@@ -8,5 +10,3 @@ exports.DATABASE = {
   pool: { min: 0, max: 3 }, // Fix issue w/ ElephantSQL
   debug: true               // Outputs knex debugging information
 };
-
-exports.PORT = process.env.PORT || 8080; 
