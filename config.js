@@ -1,8 +1,6 @@
 'use strict';
 
-const DATABASE_URL = process.env.DATABASE_URL
-                   ||  global.DATABASE_URL 
-                   || 'postgresql://localhost/dev-restaurants-app';
+const DATABASE_URL = process.env.DATABASE_URL || 'postgresql://localhost/dev-restaurants-app';
 
 exports.DATABASE = {
   client: 'pg',
