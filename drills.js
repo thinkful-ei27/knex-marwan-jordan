@@ -3,7 +3,7 @@
 const { DATABASE } = require('./config');
 const knex = require('knex')(DATABASE);
 
-// clear the console before each run
+// clear the console (just a convenience)
 process.stdout.write('\x1Bc');
 
 // Sample select 
@@ -12,10 +12,4 @@ knex
   .from('restaurants')
   .limit(2)
   .debug(true)
-  .then(results => console.log(results));
-
-
-// Destroy the connection pool
-knex.destroy().then(() => {
-  console.log('database connection closed');
-});
+  .then(results => console.log(JSON.stringify(results, null, 2)));
