@@ -12,4 +12,4 @@ knex
   .from('restaurants')
   .limit(2)
   .debug(true)
-  .then(results => console.log(JSON.stringify(results, null, 2)));
+  .then(results => console.log(results, null, 2));
