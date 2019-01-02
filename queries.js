@@ -5,9 +5,37 @@ const knex = require('knex')(DATABASE);
 
 
 // Sample select 
+
+
+// knex
+//   .select()
+//   .from('restaurants')
+//   .limit(2)
+//   .debug(true)
+//   .then(results => console.log(results));
+
+const printResults = function(results) { 
+  console.log(results)
+};
+
 knex
-  .select()
-  .from('restaurants')
-  .limit(2)
+.select().table('restaurants')
+.then(results=> {
+  console.log(results)
+});
+
+knex
+  .select().from('restaurants')
+  .where({ cuisine: 'Italian'})
   .debug(true)
-  .then(results => console.log(results));
+  .then(results => console.log(results))
+
+knex
+  .select('id', 'name')
+  .from('restaurants')
+  .where( {cuisine: 'Italian'})
+  .limit(10)
+  .debug(true)
+  .then(printResults)
+
+  
