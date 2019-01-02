@@ -3,6 +3,7 @@
 const { DATABASE } = require('./config');
 const knex = require('knex')(DATABASE);
 
+
 // Sample select 
 knex
   .select()

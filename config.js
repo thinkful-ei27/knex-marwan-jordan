@@ -10,3 +10,4 @@ exports.DATABASE = {
   pool: { min: 0, max: 3 }, // Fix issue w/ ElephantSQL
   debug: true               // Outputs knex debugging information
 };
+ 
