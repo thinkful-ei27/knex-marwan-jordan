@@ -133,3 +133,21 @@ const printResults = function(results) {
 //     'name', 'DJ Reynolds Pub and Restaurant')
 //   .returning('name')
 //   .then(printResults)
+
+// 12
+
+knex
+.select()
+.from('grades')
+.where({id: '10'})
+.del()
+
+// knex('grades').where('id','10').del()
+
+// 13
+
+knex
+.select()
+.from('restaurants')
+.where({id: '22'})
+.del()
