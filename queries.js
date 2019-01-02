@@ -69,7 +69,7 @@ const printResults = function(results) {
 //   .where({address_zipcode: '11372', cuisine: 'Thai'})
 //   .then(printResults)
 
-7
+// 7
 
 // knex
 //   .select('id', 'name', 'address_zipcode')
@@ -80,25 +80,56 @@ const printResults = function(results) {
 
 // 8
 
-knex
-.insert({
-  name: 'Byte Cafe',borough: 'Brooklyn',
-  cuisine: 'coffee',address_building_number: '123',
-  address_street: 'Atlantic Avenue',
-  address_zipcode: '11231'
-})
-.into('restaurants')
-.then(printResults)
+// knex
+// .insert({
+//   name: 'Byte Cafe',borough: 'Brooklyn',
+//   cuisine: 'coffee',address_building_number: '123',
+//   address_street: 'Atlantic Avenue',
+//   address_zipcode: '11231'
+// })
+// .into('restaurants')
+// .then(printResults)
 
-// 9
+// // 9
 
-knex
-.insert({
-  name: 'someCafe', borough: 'Brooklyn',
-  cuisine:'coffee',address_building_number:'123',
-  address_street: 'Oak Avenue', address_zipcode:'11222'
-})
-.into('restaurants')
-.returning('id','name')
-.then(printResults)
+// knex
+// .insert({
+//   name: 'someCafe', borough: 'Brooklyn',
+//   cuisine:'coffee',address_building_number:'123',
+//   address_street: 'Oak Avenue', address_zipcode:'11222'
+// })
+// .into('restaurants')
+// .returning(['id','name'])
+// .then(printResults)
 
+// 10
+
+// knex
+// .insert([{
+//   name: 'someCafe', borough: 'Queens',
+//   cuisine: 'coffee', address_building_number: '47',
+//   address_street: 'Oregon Blvd', address_zipcode: '10014'
+// }, 
+// {
+//   name: 'Cat Cafe', borough: 'Manhattan',
+//   cuisine: 'Italian', address_building_number: '243',
+//   address_street: 'Wall Street', address_zipcode: '10012'
+// },
+// {
+//   name: 'Gene\'s', borough: 'Queens',
+//   cuisine: 'Irish', address_building_number: '77787',
+//   address_street: 'Dublin Avenue', address_zipcode: '11222'
+// }
+// ])
+// .into('restaurants')
+// .returning(['id','name'])
+// .then(printResults)
+
+// 11
+
+// knex('restaurants')
+//   .where('nyc_restaurant_id', '30191841' )
+//   .update(
+//     'name', 'DJ Reynolds Pub and Restaurant')
+//   .returning('name')
+//   .then(printResults)
