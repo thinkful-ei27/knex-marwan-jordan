@@ -38,4 +38,21 @@ knex
   .debug(true)
   .then(printResults)
 
+  // 4
+
+  knex 
+  .select()
+  .count()
+  .from('restaurants')
+  .where({cuisine: 'Thai'})
+  .then(printResults)
+
+  // 5
+
+  knex
+  .select()
+  .count()
+  .from('restaurants')
+  .then(printResults)
+
   
