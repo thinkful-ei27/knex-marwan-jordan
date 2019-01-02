@@ -69,11 +69,36 @@ const printResults = function(results) {
 //   .where({address_zipcode: '11372', cuisine: 'Thai'})
 //   .then(printResults)
 
-// 7
+7
+
+// knex
+//   .select('id', 'name', 'address_zipcode')
+//   .from('restaurants')
+//   .whereIn('address_zipcode', ['10012', '10013', '10014'])
+//   .andWhere({cuisine: 'Italian'})
+//   .then(printResults)
+
+// 8
 
 knex
-  .select('id', 'name', 'address_zipcode')
-  .from('restaurants')
-  .whereIn('address_zipcode', ['10012', '10013', '10014'])
-  .andWhere({cuisine: 'Italian'})
-  .then(printResults)
+.insert({
+  name: 'Byte Cafe',borough: 'Brooklyn',
+  cuisine: 'coffee',address_building_number: '123',
+  address_street: 'Atlantic Avenue',
+  address_zipcode: '11231'
+})
+.into('restaurants')
+.then(printResults)
+
+// 9
+
+knex
+.insert({
+  name: 'someCafe', borough: 'Brooklyn',
+  cuisine:'coffee',address_building_number:'123',
+  address_street: 'Oak Avenue', address_zipcode:'11222'
+})
+.into('restaurants')
+.returning('id','name')
+.then(printResults)
+
